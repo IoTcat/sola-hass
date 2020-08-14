@@ -1,0 +1,412 @@
+day_mode:
+  alias: 白天模式
+  sequence:
+  - alias: 餐厅
+    entity_id: switch.can_ting_ye_jian_mo_shi
+    service: homeassistant.turn_off
+  - alias: 餐厅-
+    entity_id: switch.can_ting_wu_ye_mo_shi
+    service: homeassistant.turn_off
+  - alias: 客厅
+    entity_id: switch.ke_ting_ye_jian_mo_shi
+    service: homeassistant.turn_off
+  - alias: 客厅-
+    entity_id: switch.ke_ting_wu_ye_mo_shi
+    service: homeassistant.turn_off
+  - alias: 厨房
+    entity_id: switch.chu_fang_ye_jian_mo_shi
+    service: homeassistant.turn_off
+  - alias: 厨房-
+    entity_id: switch.chu_fang_wu_ye_mo_shi
+    service: homeassistant.turn_off
+  - alias: 走廊
+    entity_id: switch.zou_lang_ye_jian_mo_shi
+    service: homeassistant.turn_off
+  - alias: 走廊-
+    entity_id: switch.zou_lang_wu_ye_mo_shi
+    service: homeassistant.turn_off
+  - alias: 客厅后
+    entity_id: switch.ke_ting_hou_ye_jian_mo_shi
+    service: homeassistant.turn_off
+  - alias: 客厅后-
+    entity_id: switch.ke_ting_hou_wu_ye_mo_shi
+    service: homeassistant.turn_off
+  - service: script.all_light_off_hard
+night_mode:
+  alias: 夜间模式
+  sequence:
+  - alias: 餐厅
+    entity_id: switch.can_ting_ye_jian_mo_shi
+    service: homeassistant.turn_on
+  - alias: 餐厅-
+    entity_id: switch.can_ting_wu_ye_mo_shi
+    service: homeassistant.turn_off
+  - alias: 客厅
+    entity_id: switch.ke_ting_ye_jian_mo_shi
+    service: homeassistant.turn_on
+  - alias: 客厅-
+    entity_id: switch.ke_ting_wu_ye_mo_shi
+    service: homeassistant.turn_off
+  - alias: 厨房
+    entity_id: switch.chu_fang_ye_jian_mo_shi
+    service: homeassistant.turn_on
+  - alias: 厨房-
+    entity_id: switch.chu_fang_wu_ye_mo_shi
+    service: homeassistant.turn_off
+  - alias: 走廊
+    entity_id: switch.zou_lang_ye_jian_mo_shi
+    service: homeassistant.turn_on
+  - alias: 走廊-
+    entity_id: switch.zou_lang_wu_ye_mo_shi
+    service: homeassistant.turn_off
+  - alias: 客厅后
+    entity_id: switch.ke_ting_hou_ye_jian_mo_shi
+    service: homeassistant.turn_on
+  - alias: 客厅后-
+    entity_id: switch.ke_ting_hou_wu_ye_mo_shi
+    service: homeassistant.turn_off
+midnight_mode:
+  alias: 午夜模式
+  sequence:
+  - alias: 餐厅
+    entity_id: switch.can_ting_wu_ye_mo_shi
+    service: homeassistant.turn_on
+  - alias: 客厅
+    entity_id: switch.ke_ting_wu_ye_mo_shi
+    service: homeassistant.turn_on
+  - alias: 厨房
+    entity_id: switch.chu_fang_wu_ye_mo_shi
+    service: homeassistant.turn_on
+  - alias: 走廊
+    entity_id: switch.zou_lang_wu_ye_mo_shi
+    service: homeassistant.turn_on
+  - alias: 客厅后
+    entity_id: switch.ke_ting_hou_wu_ye_mo_shi
+    service: homeassistant.turn_on
+auto_mode:
+  alias: 自动模式
+  sequence:
+  - alias: 餐厅
+    entity_id: switch.can_ting_zi_dong_mo_shi
+    service: homeassistant.turn_on
+  - alias: 客厅
+    entity_id: switch.ke_ting_zi_dong_mo_shi
+    service: homeassistant.turn_on
+  - alias: 厨房
+    entity_id: switch.chu_fang_zi_dong_mo_shi
+    service: homeassistant.turn_on
+  - alias: 走廊
+    entity_id: switch.zou_lang_zi_dong_mo_shi
+    service: homeassistant.turn_on
+  - alias: 客厅后
+    entity_id: switch.ke_ting_hou_zi_dong_mo_shi
+    service: homeassistant.turn_on
+manual_mode:
+  alias: 手动模式
+  sequence:
+  - alias: 餐厅
+    entity_id: switch.can_ting_zi_dong_mo_shi
+    service: homeassistant.turn_off
+  - alias: 客厅
+    entity_id: switch.ke_ting_zi_dong_mo_shi
+    service: homeassistant.turn_off
+  - alias: 厨房
+    entity_id: switch.chu_fang_zi_dong_mo_shi
+    service: homeassistant.turn_off
+  - alias: 走廊
+    entity_id: switch.zou_lang_zi_dong_mo_shi
+    service: homeassistant.turn_off
+  - alias: 客厅后
+    entity_id: switch.ke_ting_hou_zi_dong_mo_shi
+    service: homeassistant.turn_off
+online_mode:
+  alias: 在线模式
+  sequence:
+  - alias: 餐厅
+    entity_id: switch.can_ting_chi_xian_mo_shi
+    service: homeassistant.turn_off
+  - alias: 客厅
+    entity_id: switch.ke_ting_chi_xian_mo_shi
+    service: homeassistant.turn_off
+  - alias: 厨房
+    entity_id: switch.chu_fang_chi_xian_mo_shi
+    service: homeassistant.turn_off
+  - alias: 走廊
+    entity_id: switch.zou_lang_chi_xian_mo_shi
+    service: homeassistant.turn_off
+  - alias: 客厅后
+    entity_id: switch.ke_ting_hou_chi_xian_mo_shi
+    service: homeassistant.turn_off
+offline_mode:
+  alias: 离线模式
+  sequence:
+  - alias: 餐厅
+    entity_id: switch.can_ting_chi_xian_mo_shi
+    service: homeassistant.turn_on
+  - alias: 客厅
+    entity_id: switch.ke_ting_chi_xian_mo_shi
+    service: homeassistant.turn_on
+  - alias: 厨房
+    entity_id: switch.chu_fang_chi_xian_mo_shi
+    service: homeassistant.turn_on
+  - alias: 走廊
+    entity_id: switch.zou_lang_chi_xian_mo_shi
+    service: homeassistant.turn_on
+  - alias: 客厅后
+    entity_id: switch.ke_ting_hou_chi_xian_mo_shi
+    service: homeassistant.turn_on
+all_light_off_hard:
+  alias: 关闭全部灯
+  sequence:
+  - alias: 餐厅
+    entity_id: light.can_ting_deng
+    service: homeassistant.turn_off
+  - alias: 客厅
+    entity_id: light.ke_ting_deng
+    service: homeassistant.turn_off
+  - alias: 厨房
+    entity_id: light.chu_fang_deng
+    service: homeassistant.turn_off
+  - alias: 走廊
+    entity_id: light.zou_lang_deng
+    service: homeassistant.turn_off
+all_light_on_hard:
+  alias: 打开全部灯
+  sequence:
+  - alias: 餐厅
+    entity_id: light.can_ting_deng
+    service: homeassistant.turn_on
+  - alias: 客厅
+    entity_id: light.ke_ting_deng
+    service: homeassistant.turn_on
+  - alias: 厨房
+    entity_id: light.chu_fang_deng
+    service: homeassistant.turn_on
+  - alias: 走廊
+    entity_id: light.zou_lang_deng
+    service: homeassistant.turn_on
+all_light_off:
+  alias: 关闭全部灯控
+  sequence:
+  - alias: 餐厅
+    entity_id: light.can_ting_deng_kong
+    service: homeassistant.turn_off
+  - alias: 客厅
+    entity_id: light.ke_ting_deng_kong
+    service: homeassistant.turn_off
+  - alias: 客厅后
+    entity_id: light.ke_ting_hou_deng_kong
+    service: homeassistant.turn_off
+  - alias: 厨房
+    entity_id: light.chu_fang_deng_kong
+    service: homeassistant.turn_off
+  - alias: 走廊
+    entity_id: light.zou_lang_deng_kong
+    service: homeassistant.turn_off
+all_light_on:
+  alias: 打开全部灯控
+  sequence:
+  - alias: 餐厅
+    entity_id: light.can_ting_deng_kong
+    service: homeassistant.turn_on
+  - alias: 客厅
+    entity_id: light.ke_ting_deng_kong
+    service: homeassistant.turn_on
+  - alias: 客厅后
+    entity_id: light.ke_ting_hou_deng_kong
+    service: homeassistant.turn_on
+  - alias: 厨房
+    entity_id: light.chu_fang_deng_kong
+    service: homeassistant.turn_on
+  - alias: 走廊
+    entity_id: light.zou_lang_deng_kong
+    service: homeassistant.turn_on
+ke_ting_light_on:
+  alias: 客厅灯控开
+  sequence:
+  - alias: ''
+    entity_id: light.ke_ting_deng_kong
+    service: homeassistant.turn_on
+ke_ting_light_off:
+  alias: 客厅灯控关
+  sequence:
+  - alias: ''
+    entity_id: light.ke_ting_deng_kong
+    service: homeassistant.turn_off
+can_ting_light_on:
+  alias: 餐厅灯控开
+  sequence:
+  - alias: ''
+    entity_id: light.can_ting_deng_kong
+    service: homeassistant.turn_on
+can_ting_light_off:
+  alias: 餐厅灯控关
+  sequence:
+  - alias: ''
+    entity_id: light.can_ting_deng_kong
+    service: homeassistant.turn_off
+chu_fang_light_on:
+  alias: 厨房灯控开
+  sequence:
+  - alias: ''
+    entity_id: light.chu_fang_deng_kong
+    service: homeassistant.turn_on
+chu_fang_light_off:
+  alias: 厨房灯控关
+  sequence:
+  - alias: ''
+    entity_id: light.chu_fang_deng_kong
+    service: homeassistant.turn_off
+zou_lang_light_on:
+  alias: 走廊灯控开
+  sequence:
+  - alias: ''
+    entity_id: light.zou_lang_deng_kong
+    service: homeassistant.turn_on
+zou_lang_light_off:
+  alias: 走廊灯控关
+  sequence:
+  - alias: ''
+    entity_id: light.zou_lang_deng_kong
+    service: homeassistant.turn_off
+ke_ting_hou_light_on:
+  alias: 客厅后灯控开
+  sequence:
+  - alias: ''
+    entity_id: light.ke_ting_hou_deng_kong
+    service: homeassistant.turn_on
+ke_ting_hou_light_off:
+  alias: 客厅后灯控关
+  sequence:
+  - alias: ''
+    entity_id: light.ke_ting_hou_deng_kong
+    service: homeassistant.turn_off
+auto_light_off:
+  alias: 智慧灯控关闭
+  sequence:
+  - alias: ''
+    entity_id: automation.can_ting_kai_api
+    service: automation.turn_off
+  - alias: ''
+    entity_id: automation.can_ting_guan_api
+    service: automation.turn_off
+  - alias: ''
+    entity_id: automation.ke_ting_kai_api
+    service: automation.turn_off
+  - alias: ''
+    entity_id: automation.ke_ting_guan_api
+    service: automation.turn_off
+  - alias: ''
+    entity_id: automation.chu_fang_kai_api
+    service: automation.turn_off
+  - alias: ''
+    entity_id: automation.chu_fang_guan_api
+    service: automation.turn_off
+  - alias: ''
+    entity_id: automation.zou_lang_kai_api
+    service: automation.turn_off
+  - alias: ''
+    entity_id: automation.zou_lang_guan_api
+    service: automation.turn_off
+auto_light_on:
+  alias: 智慧灯控打开
+  sequence:
+  - alias: ''
+    entity_id: automation.can_ting_kai_api
+    service: automation.turn_on
+  - alias: ''
+    entity_id: automation.can_ting_guan_api
+    service: automation.turn_on
+  - alias: ''
+    entity_id: automation.ke_ting_kai_api
+    service: automation.turn_on
+  - alias: ''
+    entity_id: automation.ke_ting_guan_api
+    service: automation.turn_on
+  - alias: ''
+    entity_id: automation.chu_fang_kai_api
+    service: automation.turn_on
+  - alias: ''
+    entity_id: automation.chu_fang_guan_api
+    service: automation.turn_on
+  - alias: ''
+    entity_id: automation.zou_lang_kai_api
+    service: automation.turn_on
+  - alias: ''
+    entity_id: automation.zou_lang_guan_api
+    service: automation.turn_on
+auto_night_on:
+  alias: 智慧夜间打开
+  sequence:
+  - alias: ''
+    entity_id: automation.li_ming_liao
+    service: automation.turn_on
+  - alias: ''
+    entity_id: automation.tian_hei_liao
+    service: automation.turn_on
+  - alias: ''
+    entity_id: automation.ye_shen_liao
+    service: automation.turn_on
+  - alias: ''
+    entity_id: automation.tian_liang_liao
+    service: automation.turn_on
+auto_night_off:
+  alias: 智慧夜间关闭
+  sequence:
+  - alias: ''
+    entity_id: automation.li_ming_liao
+    service: automation.turn_off
+  - alias: ''
+    entity_id: automation.tian_hei_liao
+    service: automation.turn_off
+  - alias: ''
+    entity_id: automation.ye_shen_liao
+    service: automation.turn_off
+  - alias: ''
+    entity_id: automation.tian_liang_liao
+    service: automation.turn_off
+water_on:
+  alias: 开始加水
+  sequence:
+  - alias: ''
+    entity_id: light.huan_re_qi_kai_guan
+    service: homeassistant.turn_on
+water_off:
+  alias: 停止加水
+  sequence:
+  - alias: ''
+    entity_id: light.huan_re_qi_kai_guan
+    service: homeassistant.turn_off
+water_on_15:
+  alias: 加水15分钟
+  sequence:
+  - data: {}
+    service: script.water_on
+  - delay:
+      minutes: 15
+  - service: script.water_off
+water_on_30:
+  alias: 加水30分钟
+  sequence:
+  - data: {}
+    service: script.water_on
+  - delay:
+      minutes: 30
+  - service: script.water_off
+water_on_60:
+  alias: 加水一小时
+  sequence:
+  - data: {}
+    service: script.water_on
+  - delay:
+      minutes: 60
+  - service: script.water_off
+water_on_90:
+  alias: 加水一时半
+  sequence:
+  - data: {}
+    service: script.water_on
+  - delay:
+      minutes: 90
+  - service: script.water_off
+

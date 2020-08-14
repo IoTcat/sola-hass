@@ -1,0 +1,106 @@
+{
+    "data": {
+        "config": {
+            "title": "\u5bb6",
+            "views": [
+                {
+                    "badges": [
+                        "sensor.can_ting_ren_shu",
+                        "sensor.ke_ting_ren_shu",
+                        "sensor.chu_fang_ren_shu",
+                        "sensor.zou_lang_ren_shu",
+                        "sensor.huan_re_qi_shui_liu_liang"
+                    ],
+                    "cards": [
+                        {
+                            "hold_action": {
+                                "action": "navigate",
+                                "navigation_path": "https://iotcat.me"
+                            },
+                            "image": "https://api.yimian.xyz/img/?type=wallpaper",
+                            "tap_action": {
+                                "action": "navigate",
+                                "navigation_path": "https://iotcat.me"
+                            },
+                            "type": "picture"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.can_ting_deng"
+                                },
+                                {
+                                    "entity": "light.ke_ting_deng"
+                                },
+                                {
+                                    "entity": "light.chu_fang_deng"
+                                },
+                                {
+                                    "entity": "light.zou_lang_deng"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "script.day_mode"
+                                },
+                                {
+                                    "entity": "script.night_mode"
+                                },
+                                {
+                                    "entity": "script.midnight_mode"
+                                },
+                                {
+                                    "entity": "switch.zhi_hui_zhao_ming"
+                                },
+                                {
+                                    "entity": "script.all_light_off_hard"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.huan_re_qi_kai_guan"
+                                },
+                                {
+                                    "entity": "script.water_on_15"
+                                },
+                                {
+                                    "entity": "script.water_on_30"
+                                },
+                                {
+                                    "entity": "script.water_on_60"
+                                },
+                                {
+                                    "entity": "script.water_on_90"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.dan_yuan_men_kai_guan"
+                                },
+                                {
+                                    "entity": "switch.dan_yuan_men_tong_hua_zhuang_tai"
+                                },
+                                {
+                                    "entity": "binary_sensor.dan_yuan_men_hua_tong"
+                                }
+                            ],
+                            "type": "entities"
+                        }
+                    ],
+                    "title": "Home"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}

@@ -1,0 +1,562 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+# default_config:
+system_health:
+history:
+config:
+logger:
+  default: info
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+zone:
+  - name: 公司
+    latitude: 36.1371308471
+    longitude: 117.0992440576
+    radius: 700
+tts:
+- platform: google_translate
+aligenie:
+  expire_hours: 90000
+# group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+homeassistant:
+  customize: !include customize.yaml
+panel_custom:
+  - name: inkwavemap
+    sidebar_title: '地图'
+    sidebar_icon: mdi:map
+    url_path: inkwavemap
+  - name: doc
+    sidebar_title: '操作指南'
+    sidebar_icon: mdi:book-open-variant
+    url_path: doc
+  - name: pan
+    sidebar_title: '家庭网盘'
+    sidebar_icon: mdi:folder
+    url_path: pan
+mqtt:
+
+light:
+  - platform: mqtt
+    name: "餐厅-灯控"
+    state_topic: "hass/snsr/din/lightCtl" 
+    command_topic: "hass/ctl/din/lightCtl"  
+    qos: 0
+    payload_on: "1"
+    payload_off: "0"
+    retain: true 
+  - platform: mqtt
+    name: "餐厅-灯"
+    state_topic: "hass/snsr/din/light" 
+    command_topic: "hass/ctl/din/light"  
+    qos: 0
+    payload_on: "1"
+    payload_off: "0"
+    retain: true 
+
+  - platform: mqtt
+    name: "厨房-灯控"
+    state_topic: "hass/snsr/kit/lightCtl" 
+    command_topic: "hass/ctl/kit/lightCtl"  
+    qos: 0
+    payload_on: "1"
+    payload_off: "0"
+    retain: true 
+  - platform: mqtt
+    name: "厨房-灯"
+    state_topic: "hass/snsr/kit/light" 
+    command_topic: "hass/ctl/kit/light"  
+    qos: 0
+    payload_on: "1"
+    payload_off: "0"
+    retain: true 
+
+  - platform: mqtt
+    name: "走廊-灯控"
+    state_topic: "hass/snsr/hall/lightCtl" 
+    command_topic: "hass/ctl/hall/lightCtl"  
+    qos: 0
+    payload_on: "1"
+    payload_off: "0"
+    retain: true 
+  - platform: mqtt
+    name: "走廊-灯"
+    state_topic: "hass/snsr/hall/light" 
+    command_topic: "hass/ctl/hall/light"  
+    qos: 0
+    payload_on: "1"
+    payload_off: "0"
+    retain: true 
+
+  - platform: mqtt
+    name: "客厅-灯控"
+    state_topic: "hass/snsr/liv/lightCtl" 
+    command_topic: "hass/ctl/liv/lightCtl"  
+    qos: 0
+    payload_on: "1"
+    payload_off: "0"
+    retain: true 
+  - platform: mqtt
+    name: "客厅-灯"
+    state_topic: "hass/snsr/liv/light" 
+    command_topic: "hass/ctl/liv/light"  
+    qos: 0
+    payload_on: "1"
+    payload_off: "0"
+    retain: true 
+
+  - platform: mqtt
+    name: "客厅后-灯控"
+    state_topic: "hass/snsr/livb/lightCtl" 
+    command_topic: "hass/ctl/livb/lightCtl"  
+    qos: 0
+    payload_on: "1"
+    payload_off: "0"
+    retain: true 
+ 
+  - platform: mqtt
+    name: "换热器开关"
+    state_topic: "hass/snsr/wc0/valve" 
+    command_topic: "hass/ctl/wc0/valve"  
+    qos: 0
+    payload_on: "1"
+    payload_off: "0"
+    retain: true 
+ 
+switch:
+  - platform: mqtt
+    name: "餐厅-夜间模式"
+    state_topic: "hass/snsr/din/mode/isNight"
+    command_topic: "hass/ctl/din/mode/isNight"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "餐厅-自动模式"
+    state_topic: "hass/snsr/din/mode/isAuto"
+    command_topic: "hass/ctl/din/mode/isAuto"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "餐厅-午夜模式"
+    state_topic: "hass/snsr/din/mode/isMidnight"
+    command_topic: "hass/ctl/din/mode/isMidnight"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "餐厅-离线模式"
+    state_topic: "hass/snsr/din/mode/isOffline"
+    command_topic: "hass/ctl/din/mode/isOffline"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "餐厅-刷新数据"
+    state_topic: "hass/refresh"
+    command_topic: "hass/refresh"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+
+  - platform: mqtt
+    name: "厨房-夜间模式"
+    state_topic: "hass/snsr/kit/mode/isNight"
+    command_topic: "hass/ctl/kit/mode/isNight"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "厨房-自动模式"
+    state_topic: "hass/snsr/kit/mode/isAuto"
+    command_topic: "hass/ctl/kit/mode/isAuto"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "厨房-午夜模式"
+    state_topic: "hass/snsr/kit/mode/isMidnight"
+    command_topic: "hass/ctl/kit/mode/isMidnight"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "厨房-离线模式"
+    state_topic: "hass/snsr/kit/mode/isOffline"
+    command_topic: "hass/ctl/kit/mode/isOffline"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "厨房-刷新数据"
+    state_topic: "hass/refresh"
+    command_topic: "hass/refresh"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+
+  - platform: mqtt
+    name: "单元门通话状态"
+    state_topic: "hass/snsr/hall/doorVoice"
+    command_topic: "hass/ctl/hall/doorVoice"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: false
+  - platform: mqtt
+    name: "单元门开关"
+    state_topic: "hass/snsr/hall/doorSwi"
+    command_topic: "hass/ctl/hall/doorSwi"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: false
+  - platform: mqtt
+    name: "走廊-夜间模式"
+    state_topic: "hass/snsr/hall/mode/isNight"
+    command_topic: "hass/ctl/hall/mode/isNight"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "走廊-自动模式"
+    state_topic: "hass/snsr/hall/mode/isAuto"
+    command_topic: "hass/ctl/hall/mode/isAuto"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "走廊-午夜模式"
+    state_topic: "hass/snsr/hall/mode/isMidnight"
+    command_topic: "hass/ctl/hall/mode/isMidnight"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "走廊-离线模式"
+    state_topic: "hass/snsr/hall/mode/isOffline"
+    command_topic: "hass/ctl/hall/mode/isOffline"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "走廊-刷新数据"
+    state_topic: "hass/refresh"
+    command_topic: "hass/refresh"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+
+  - platform: mqtt
+    name: "客厅-夜间模式"
+    state_topic: "hass/snsr/liv/mode/isNight"
+    command_topic: "hass/ctl/liv/mode/isNight"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "客厅-自动模式"
+    state_topic: "hass/snsr/liv/mode/isAuto"
+    command_topic: "hass/ctl/liv/mode/isAuto"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "客厅-午夜模式"
+    state_topic: "hass/snsr/liv/mode/isMidnight"
+    command_topic: "hass/ctl/liv/mode/isMidnight"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "客厅-离线模式"
+    state_topic: "hass/snsr/liv/mode/isOffline"
+    command_topic: "hass/ctl/liv/mode/isOffline"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "客厅-刷新数据"
+    state_topic: "hass/refresh"
+    command_topic: "hass/refresh"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+
+  - platform: mqtt
+    name: "客厅后-夜间模式"
+    state_topic: "hass/snsr/livb/mode/isNight"
+    command_topic: "hass/ctl/livb/mode/isNight"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "客厅后-自动模式"
+    state_topic: "hass/snsr/livb/mode/isAuto"
+    command_topic: "hass/ctl/livb/mode/isAuto"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "客厅后-午夜模式"
+    state_topic: "hass/snsr/livb/mode/isMidnight"
+    command_topic: "hass/ctl/livb/mode/isMidnight"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "客厅后-离线模式"
+    state_topic: "hass/snsr/livb/mode/isOffline"
+    command_topic: "hass/ctl/livb/mode/isOffline"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "客厅后-刷新数据"
+    state_topic: "hass/refresh"
+    command_topic: "hass/refresh"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+
+  - platform: mqtt
+    name: "智慧照明"
+    state_topic: "inner/smartLightMode"
+    command_topic: "inner/smartLightMode"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+    retain: true
+
+
+binary_sensor:
+  - platform: mqtt
+    state_topic: "hass/snsr/din/p0"
+    name: '餐厅-人体传感器0'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/din/p1"
+    name: '餐厅-人体传感器1'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/din/p2"
+    name: '餐厅-人体传感器2'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/din/p3"
+    name: '餐厅-人体传感器3'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/din/swi"
+    name: '餐厅-触碰开关'
+    payload_on: "1"
+    payload_off: "0"
+
+  - platform: mqtt
+    state_topic: "hass/snsr/kit/p0"
+    name: '厨房-人体传感器0'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/kit/p1"
+    name: '厨房-人体传感器1'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/kit/p2"
+    name: '厨房-人体传感器2'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/kit/p3"
+    name: '厨房-人体传感器3'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/kit/swi"
+    name: '厨房-触碰开关'
+    payload_on: "1"
+    payload_off: "0"
+
+  - platform: mqtt
+    state_topic: "hass/snsr/hall/p0"
+    name: '走廊-人体传感器0'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/hall/p1"
+    name: '走廊-人体传感器1'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/hall/p2"
+    name: '走廊-人体传感器2'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/hall/p3"
+    name: '走廊-人体传感器3'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/hall/swi"
+    name: '走廊-触碰开关'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/hall/doorTelSwi"
+    name: '单元门话筒'
+    payload_on: "1"
+    payload_off: "0"
+
+  - platform: mqtt
+    state_topic: "hass/snsr/liv/p0"
+    name: '客厅-人体传感器0'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/liv/p1"
+    name: '客厅-人体传感器1'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/liv/p2"
+    name: '客厅-人体传感器2'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/liv/p3"
+    name: '客厅-人体传感器3'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/liv/swi"
+    name: '客厅-触碰开关'
+    payload_on: "1"
+    payload_off: "0"
+
+  - platform: mqtt
+    state_topic: "hass/snsr/livb/p0"
+    name: '客厅后-人体传感器0'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/livb/p1"
+    name: '客厅后-人体传感器1'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/livb/p2"
+    name: '客厅后-人体传感器2'
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    state_topic: "hass/snsr/livb/p3"
+    name: '客厅后-人体传感器3'
+    payload_on: "1"
+    payload_off: "0"
+
+sensor:
+  - platform: mqtt
+    state_topic: "peo/hall"
+    name: '走廊人数'
+    unit_of_measurement: "人" 
+  - platform: mqtt
+    state_topic: "peo/din"
+    name: '餐厅人数'
+    unit_of_measurement: "人" 
+  - platform: mqtt
+    state_topic: "peo/liv"
+    name: '客厅人数'
+    unit_of_measurement: "人" 
+  - platform: mqtt
+    state_topic: "peo/kit"
+    name: '厨房人数'
+    unit_of_measurement: "人" 
+
+  - platform: mqtt
+    state_topic: "act/kit"
+    name: '厨房活跃度' 
+    unit_of_measurement: "β" 
+  - platform: mqtt
+    state_topic: "act/din"
+    name: '餐厅活跃度' 
+    unit_of_measurement: "β" 
+  - platform: mqtt
+    state_topic: "act/liv"
+    name: '客厅活跃度' 
+    unit_of_measurement: "β" 
+
+  - platform: mqtt
+    state_topic: "hass/snsr/wc0/flowmeterTotal"
+    name: '换热器水流量' 
+    unit_of_measurement: "升" 
+
+
+
+
+
+
+

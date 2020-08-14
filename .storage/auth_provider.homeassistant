@@ -1,0 +1,32 @@
+{
+    "data": {
+        "users": [
+            {
+                "password": "JDJiJDEyJHNMOTNFMTdJR2ltLlNJNzBsM0hmTS5vWXg5ai40SkhMR1B6QmRXTTVlcC56M1V0U0labHBX",
+                "username": "yimian"
+            },
+            {
+                "password": "JDJiJDEyJEFzTFIvZ2l2TTAxSGxXbDVYVmRnNS5sUzZ0NzVuVkxBTmpvajhXZWViOUZzaUFkSXgyWFZt",
+                "username": "ming"
+            },
+            {
+                "password": "JDJiJDEyJC4ubjIxVVFUQlBwUXpxTUJ1SmVNNnV5RVo2RlZobk9uSzY0blJSb2Zpa3gvcFM1akdPUUVp",
+                "username": "xiuju"
+            },
+            {
+                "password": "JDJiJDEyJEZkSXE2L3BFN1V3L2JqVDFYdjdZQU9RNzJUUWlwaVdnRjFseTBkQ0I2VWcvNXlCampUSmtP",
+                "username": "tmall"
+            },
+            {
+                "password": "JDJiJDEyJElScVZRM1oxTWhNZXljRUhMM2JHcnU0R05ZbldsN0k5dzFyekMwekI5dGVvRWNxbktSTWwu",
+                "username": "zhangge"
+            },
+            {
+                "password": "JDJiJDEyJEx6anVZeDV1dUhsLml5TjZxYmp3bE9iNERSdTlMTVBXWFVIOEw0QmdLNmJYajdsNllNc09D",
+                "username": "youliuedu"
+            }
+        ]
+    },
+    "key": "auth_provider.homeassistant",
+    "version": 1
+}

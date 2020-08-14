@@ -1,0 +1,134 @@
+- id: '1567482266558'
+  alias: 天亮了
+  trigger:
+  - event: sunrise
+    offset: 00:40:00
+    platform: sun
+  condition: []
+  action:
+  - alias: ''
+    entity_id: light.zou_lang_deng
+    service: script.day_mode
+  - data: {}
+    service: script.all_light_off
+- id: '1567491552930'
+  alias: 天黑了
+  trigger:
+  - event: sunset
+    offset: -00:40:00
+    platform: sun
+  condition: []
+  action:
+  - service: script.night_mode
+- id: '1567491683962'
+  alias: 夜深了
+  trigger:
+  - event: sunset
+    offset: 07:00:00
+    platform: sun
+  condition: []
+  action:
+  - service: script.midnight_mode
+- id: '1567491751733'
+  alias: 黎明了
+  trigger:
+  - event: sunrise
+    offset: -03:00:00
+    platform: sun
+  condition: []
+  action:
+  - service: script.night_mode
+- id: '1567493589882'
+  alias: 餐厅-开API
+  trigger:
+  - payload: '1'
+    platform: mqtt
+    topic: hass/autoLight/din
+  condition: []
+  action:
+  - service: script.can_ting_light_on
+- id: '1567493637377'
+  alias: 餐厅-关API
+  trigger:
+  - payload: '0'
+    platform: mqtt
+    topic: hass/autoLight/din
+  condition: []
+  action:
+  - service: script.can_ting_light_off
+- id: '1567493708394'
+  alias: 客厅-开API
+  trigger:
+  - payload: '1'
+    platform: mqtt
+    topic: hass/autoLight/liv
+  condition: []
+  action:
+  - service: script.ke_ting_light_on
+  - data: {}
+    service: script.ke_ting_hou_light_on
+- id: '1567493785349'
+  alias: 客厅-关API
+  trigger:
+  - payload: '0'
+    platform: mqtt
+    topic: hass/autoLight/liv
+  condition: []
+  action:
+  - service: script.ke_ting_light_off
+  - data: {}
+    service: script.ke_ting_hou_light_off
+- id: '1567493863683'
+  alias: 厨房-开API
+  trigger:
+  - payload: '1'
+    platform: mqtt
+    topic: hass/autoLight/kit
+  condition: []
+  action:
+  - service: script.chu_fang_light_on
+- id: '1567493905682'
+  alias: 厨房-关API
+  trigger:
+  - payload: '0'
+    platform: mqtt
+    topic: hass/autoLight/kit
+  condition: []
+  action:
+  - service: script.chu_fang_light_off
+- id: '1567493954259'
+  alias: 走廊-开API
+  trigger:
+  - payload: '1'
+    platform: mqtt
+    topic: hass/autoLight/hall
+  condition: []
+  action:
+  - service: script.zou_lang_light_on
+- id: '1567493995515'
+  alias: 走廊-关API
+  trigger:
+  - payload: '0'
+    platform: mqtt
+    topic: hass/autoLight/hall
+  condition: []
+  action:
+  - service: script.zou_lang_light_off
+- id: '1567681029672'
+  alias: 智慧照明 开 按钮
+  trigger:
+  - payload: '1'
+    platform: mqtt
+    topic: inner/smartLightMode
+  condition: []
+  action:
+  - service: script.auto_light_on
+- id: '1567681101520'
+  alias: 智慧照明 关 按钮
+  trigger:
+  - payload: '0'
+    platform: mqtt
+    topic: inner/smartLightMode
+  condition: []
+  action:
+  - service: script.auto_light_off

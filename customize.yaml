@@ -1,0 +1,82 @@
+light.huan_re_qi_kai_guan:
+  icon: mdi:water
+script.day_mode:
+  icon: mdi:brightness-7
+script.night_mode:
+  icon: mdi:brightness-2
+script.midnight_mode:
+  icon: mdi:brightness-3
+script.all_light_off_hard:
+  icon: mdi:google-keep
+script.water_on_15:
+  icon: mdi:hail
+script.water_on_30:
+  icon: mdi:hail
+script.water_on_60:
+  icon: mdi:hail
+script.water_on_90:
+  icon: mdi:hail
+switch.dan_yuan_men_kai_guan:
+  icon: mdi:key
+switch.dan_yuan_men_tong_hua_zhuang_tai:
+  icon: mdi:phone
+
+light.zou_lang_deng:
+  friendly_name: 走廊灯 
+  hagenie_deviceName: 灯  
+  hagenie_deviceType: light  
+  hagenie_zone: 走廊 
+
+light.can_ting_deng:
+  friendly_name: 餐厅灯 
+  hagenie_deviceName: 灯  
+  hagenie_deviceType: light  
+  hagenie_zone: 餐厅 
+
+light.chu_fang_deng:
+  friendly_name: 厨房灯 
+  hagenie_deviceName: 灯  
+  hagenie_deviceType: light  
+  hagenie_zone: 厨房 
+
+light.ke_ting_deng:
+  friendly_name: 客厅灯 
+  hagenie_deviceName: 灯  
+  hagenie_deviceType: light  
+  hagenie_zone: 客厅 
+
+light.huan_re_qi_kai_guan:
+  friendly_name: 换热器 
+  hagenie_deviceName: 热水器 
+  hagenie_deviceType: switch
+  hagenie_zone: 浴室
+
+switch.dan_yuan_men_kai_guan:
+  friendly_name: 单元门 
+  hagenie_deviceName: 智能门控  
+  hagenie_deviceType: switch  
+  hagenie_zone: 楼下 
+
+switch.zhi_hui_zhao_ming:
+  friendly_name: 智慧照明 
+  hagenie_deviceName: 智能场景开关 
+  hagenie_deviceType: switch
+  hagenie_zone: 一楼
+
+script.day_mode:
+  friendly_name: 白天模式
+  hagenie_deviceName: 智能场景开关 
+  hagenie_deviceType: switch
+  hagenie_zone: 二楼
+
+script.night_mode:
+  friendly_name: 夜间模式
+  hagenie_deviceName: 智能场景开关 
+  hagenie_deviceType: switch
+  hagenie_zone: 三楼
+
+script.midnight_mode:
+  friendly_name: 午夜模式
+  hagenie_deviceName: 智能场景开关 
+  hagenie_deviceType: switch
+  hagenie_zone: 四楼

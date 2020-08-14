@@ -1,0 +1,17 @@
+{
+    "data": {
+        "entities": [
+            {
+                "config_entry_id": "bc16fd8a33e440ddafe9160704500793",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "weather.jia",
+                "name": "\u5929\u6c14",
+                "platform": "met",
+                "unique_id": "home"
+            }
+        ]
+    },
+    "key": "core.entity_registry",
+    "version": 1
+}
